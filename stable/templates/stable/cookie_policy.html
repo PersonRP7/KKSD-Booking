@@ -1,0 +1,19 @@
+{% extends 'stable/base.html' %}
+{% load static %}
+{% block content %}
+  <button class = "btn btn-success" onclick="trnslt()">English translation</button>
+  <div class="content-section" align = 'center' id = "cookies_txt">
+    <p>Ova web aplikacija koristi kolačiće za pohranjivanje
+    login podataka Vašeg korisničkog profila(korisničko ime, lozinka).</p>
+
+    <p>Kolačići traju 2 tjedna od dana zadnjeg posjeta
+    web aplikaciji.</p>
+
+    <p>Kolačiće možete izbrisati u vlastitom pregledniku.</p>
+
+  </div>
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'stable/cookie_policy.js' %}"></script>
+{% endblock script %}

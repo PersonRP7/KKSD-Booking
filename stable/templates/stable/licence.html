@@ -1,0 +1,77 @@
+{% extends 'stable/base.html' %}
+{% load static %}
+{% block content %}
+
+<button id="translate_button" class="btn btn-success">English translation</button>
+
+<div class="content-section" id="licence_txt">
+  <p>
+  Konjički klub Sokol - Dupci(KKSD) omogućava rezervacije
+  treninga putem web aplikacije.</p>
+
+  <p>
+  Privatni podatci potrebni za korištenje aplikacije:
+</p>
+<p>
+    -Vaše ime, prezime, korisničko ime i lozinka.</p>
+
+ <p> Način obrade vaših podataka:</p>
+   <p> -Aplikacija koristi Vaše ime, prezime i korisničko ime za
+     rezervaciju odabranog konja u odabrano vrijeme.</p>
+
+    <p>-Aplikacija koristi Vaše ime, prezime i korisničko ime za onemogućavanje
+    slučajne dvostruke rezervacije konja.</p>
+
+   <p> -Administrator mora odobriti vašu traženu rezervaciju.</p>
+
+   <p> -Administrator je jedina osoba koja ima pristup Vašem korisničkom imenu,
+    imenu i prezimenu, traženom konju i datumu.</p>
+
+   <p> -Aplikacija prikazuje rezervirane treninge registriranim
+    članovima aplikacije. Imena, prezimena i korisnička imena jahača nisu prikazana.</p>
+
+   <p> -Aplikacija automatski briše prihvaćene rezervacije čiji je
+    rok istekao.</p>
+
+    <p>-Aplikacija automatski briše istekle rezervacije koje nisu
+    bila prihvaćene.</p>
+
+    <p>-Vaše rezervacije koje još nisu prihvaćene možete izbrisati.</p>
+
+    <p>-Rezervacije koje su prihvaćene, mogu biti izbrisane isključivo
+    više od 24h unaprijed.</p>
+
+  <p>Privatne i javne poruke:</p>
+    <p>-Administrator Vam može slati privatne i javne poruke.</p>
+
+   <p> -Sve privatne i javne poruke se automatski brišu nakon 7 dana.</p>
+
+ <p> -Privatne poruke možete sami izbrisati.</p>
+
+   <p> -Javne poruke ne možete sami izbrisati.</p>
+
+  <p>Profil:<p>
+   <p> -Račun možete sami izbrisati.</p>
+
+   <p> -Brisanje računa automatski briše Vaše podatke(ime, prezime, korisničko ime, lozinka,
+    privatne ali ne i javne poruke, podatke vezane za potencijalne treninge(prihvaćene
+    ili neprihvaćene)).</p>
+
+   <p> -U slučaju gubitka lozinke i/ili korisničkog imena možete upitati administratora za brisanje dotičnog
+    profila ili stvaranja novog.</p>
+
+   <p> -Administrator može obrisati Vaš profil zbog bilokakvih razloga.</p>
+
+   <p> -U sklopu vašeg profila imate pristup svim vašim unesenim podatcima:<p>
+      <p>-Ime, prezime, korisničko ime, lozinka, privatne i javne poruke, potencijalni treninzi(
+      prihvaćeni ili neprihvaćeni).</p>
+
+   <p> -Konjički klub Sokol Dupci(KKSD) ne odgovara za bilokakvu štetu nastalu
+    gubitkom privatnih podataka(Ime, prezime, korisničko ime, lozinka, privatne i javne poruke, podatci
+    vezani uz potencijalne treninge(prihvaćeni i neprihvaćeni)).</p>
+</div>
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'stable/licence.js' %}"></script>
+{% endblock script %}

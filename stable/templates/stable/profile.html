@@ -1,0 +1,50 @@
+{% extends 'stable/base.html' %}
+
+{% block content %}
+
+<div class="content-section">
+  <p>
+    {{ user.first_name }} {{ user.last_name }} @ {{ user.username }}
+  </p>
+  <p>
+    <a href="{% url 'change_password' %}">Change password.</a>
+  </p>
+  <p>
+    <a href="{% url 'delete_account' %}">Delete my account.</a>
+  </p>
+</div>
+
+<div class="content-section">
+  {% if pending_context %}
+    <a href="{% url 'cancel_pending' %}">Cancel my pending request.</a>
+  {% elif yes_context %}
+    <a href="{% url 'cancel_yes' %}">Cancel my accepted request.</a>
+  {% else %}
+    <a href="{% url 'pending' %}">Book a new request</a>
+  {% endif %}
+</div>
+
+<div class="content-section" align = 'center'>
+  {% if pending_context %}
+    {% for i in pending_context %}
+      You have a pending request for {{ i.horse }} on {{ i.year }}/{{ i.month }}/{{ i.day }} at {{ i.hour }}:{{ i.minute }}
+    {% endfor %}
+  {% elif yes_context %}
+    {% for i in yes_context %}
+      <p style="color: green;">You have a confirmed request for {{ i.horse }} on {{ i.year }}/{{ i.month }}/{{ i.day }} at {{ i.hour }}:{{ i.minute }}</p>
+    {% endfor %}
+  {% elif no_context %}
+    {% for i in no_context %}
+      <p style="color: red;">Request denied for {{ i.horse }} on {{ i.year }}/{{ i.month }}/{{ i.day }} at {{ i.hour }}:{{ i.minute }}</p>
+    {% endfor %}
+  {% else %}
+    Nothing to see here.
+  {% endif %}
+</div>
+
+<div class="content-section" align = 'center'>
+  <p><a href="{% url 'see_pm' %}">See my private messages.</a></p>
+  <p><a href="{% url 'see_public' %}">See my public messages</a></p>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'stable/base.html' %}
+
+{% block content %}
+  {% for i in message %}
+    <div class="content-section" align = 'center'>
+      <p>{{ i.subject }}</p>
+      <p>{{ i.message }}</p>
+      <p><a href="{{ i.get_absolute_url }}">{{ i.id }}</a></p>
+    </div>
+  {% endfor %}
+{% endblock content %}

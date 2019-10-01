@@ -1,0 +1,10 @@
+__pycache__/
+
+some_file.txt
+some_other_file.txt
+some_third_file.txt
+email_stuff.py
+.coverage
+htmlcov
+geckodriver.log
+db.sqlite3
